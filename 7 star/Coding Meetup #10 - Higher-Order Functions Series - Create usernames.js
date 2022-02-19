@@ -11,6 +11,10 @@ var list1 = [
   ] */
 
   function addUsername(list) {
-    // thank you for checking out the Coding Meetup kata :)
+    let date = new Date();
+    list.forEach(function(developer) {
+          developer.username = (developer.firstName).toLowerCase() + (developer.lastName[0]).toLowerCase() + (date.getFullYear() - developer.age);
+        });  
+    return list;
   }
-console.log()  
+console.log(addUsername(list1));  
