@@ -1,11 +1,18 @@
 function findUniq(arr) {
-    let num;
-    let arrNew = new Set(arr);
-    for (let i=0;i<arr.length;i++){
-        if(arr[i]==arr[i+1]){
-            num = arr[i]
-        }
-    };
-    return Object.arrNew//if(arrNew[0]==num){return arrNew[1]}else{return arrNew[0]};
+    arr.sort((a,b)=>a-b);
+    return arr[0]==arr[1]?arr.pop():arr[0]
   }
-console.log(findUniq([3, 3, 3, 4, 3, 3 ]));  
+console.log(findUniq([4, 3, 3, 3, 3, 3 ])); 
+
+
+function findUniq(arr) {
+    arr.sort((a,b)=>a-b);
+    return arr[0]==arr[1]?arr.pop():arr[0]
+  }
+
+
+
+
+/*   function findUniq(arr) {
+    return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n));
+  } */
