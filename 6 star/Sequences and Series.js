@@ -1,4 +1,4 @@
 function getScore(n) {
-    return 25*(n+9);
-  }
+  return n * (n + 1) * 25;
+}
   console.log(getScore(2));
