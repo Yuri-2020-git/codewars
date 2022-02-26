@@ -1,14 +1,5 @@
-function* generateSequence() {
-    yield 1;
-    yield 2;
-    return 3;
-  }
-  
-  let generator = generateSequence();
-  
-  let one = generator.next();
-  let two = generator.next();
-  let three = generator.next();
-  let foor = generator.next();
-
-console.log(foor);
+function sortArray(array) {
+    const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
+    return array.map((x) => x % 2 ? odd.shift() : x);
+ }
+ console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
