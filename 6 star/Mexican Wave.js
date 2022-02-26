@@ -1,13 +1,9 @@
-function wave(str){
-    let strNew = str.replace(/ /g, '')+' ';
-    let n = str.replace(/ /g, '').length;
-    let arr = strNew.repeat(n).split(' ');
-    arr.pop();
-    // for(let i=0;i<arr.length;i++){
-    //     let arrNew;
-    //     arrNew = arr[i].split('');
-
-    //}
-    return arr;
+function wave(str) {
+    return str.split('').map((l, i, a) => {
+      let c = a.slice();
+      c[i] = c[i].toUpperCase();
+      return c.join('');
+    }).filter((w, i) => w[i] !== ' ');
   }
-  console.log(wave("he llo")); //["Hello", "hEllo", "heLlo", "helLo", "hellO"]
+  console.log(wave(" Gap , gAp , gaP ")); //["Hello", "hEllo", "heLlo", "helLo", "hellO"]
+
