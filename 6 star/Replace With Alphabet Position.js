@@ -1,12 +1,11 @@
 function changer(str) {
-  let arrNew = str.toLowerCase().split('');
-  let arr=[];
-  let alph = 'abcdefghijklmnopqrstuvwxyz';
+  var strNew = "";
+  for (i = 0; i < str.length; i++) {
+    var c = str.charAt(i).toLowerCase();
+    var code = c.charCodeAt(0);
+    if (code >= 97 && code <= 122) strNew += ((code - 97 + 1) + " ")
+  }
+  return strNew;
+}
 
-  for (let i=0;i<arrNew.length;i++){
-    arr.push(alph.indexOf(arrNew[i])+' ')
-  }
-  arr.pop();
-  return arr.join('');       
-  }
-  console.log(changer("The sunset sets at twelve o' clock."));
+console.log(changer("The sunset sets at twelve o' clock."));
